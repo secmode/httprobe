@@ -216,7 +216,8 @@ func isListening(client *http.Client, url, method string) bool {
 	if err != nil {
 		return false
 	}
-
+	
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0")
 	req.Header.Add("Connection", "close")
 	req.Close = true
 
